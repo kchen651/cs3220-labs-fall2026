@@ -7,8 +7,11 @@ module combinational_circuits (
     input p2a, p2b, p2c, p2d,
     output p2y );
 
+    assign p2ab = p2a & p2b;
+    assign p2cd = p2c & p2d;
+    assign cbf = p1c & p1b & p1f;
 
-    assign p1y = 1'b0;
-    assign p2y = 1'b0;
+    assign p1y = cbf | fed;
+    assign p2y = p2ab | p2cd;
 
 endmodule
