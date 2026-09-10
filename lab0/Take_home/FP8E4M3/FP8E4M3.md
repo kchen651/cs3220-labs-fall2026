@@ -30,7 +30,7 @@ More details:
 *   Divide-by-zero is not tested.
 *   Simple testcases.
 *   During the computation, the one with smaller exponent will be shifted, you should keep the precision until rounding. As for rounding mode, we use default **rounding to nearest even**.
-    *   I find this [pdf](http://indico.ictp.it/event/7657/session/3/contribution/12/material/0/0.pdf) useful to explain the rounding and the GRS bits.
+    *   I find this [pdf](https://indico.ictp.it/event/7657/session/3/contribution/12/material/0/0.pdf) useful to explain the rounding and the GRS bits.
     *   The testcases may be too easy to worry about the rounding.
 *   `o_valid` may come many cycles after `i_valid` for divide.
 
