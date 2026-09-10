@@ -12,7 +12,18 @@ module bf16 #(
     output                  o_valid
 );
 
+    reg [DATA_WIDTH-1:0] data_bf16
+
     // i_inst: 0 = add, 1 = mul, 2 = div
     // TODO: Implement the BF16 unit
+    always @(*) begin
+        case (i_inst)
+            0: data_bf16 = i_data_a + i_data_b;
+            1: data_bf16 = i_data_a * i_data_b;
+            2: data_bf16 = i_data_a / i_data_b; 
+        endcase
+    end
+
+    assign o_data = data_bf16;
 
 endmodule
