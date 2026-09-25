@@ -1,0 +1,872 @@
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/add.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/add.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/add.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[32]  PC=0x204 Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[36]  PC=0x208 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[40]  PC=0x20c Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[44]  PC=0x210 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[48]  PC=0x214 Inst=0x313 Op=12 wr_reg=1 wregno=6 regval=0
+[52]  PC=0x218 Inst=0x393 Op=12 wr_reg=1 wregno=7 regval=0
+[56]  PC=0x21c Inst=0x413 Op=12 wr_reg=1 wregno=8 regval=0
+[60]  PC=0x220 Inst=0x493 Op=12 wr_reg=1 wregno=9 regval=0
+[64]  PC=0x224 Inst=0x513 Op=12 wr_reg=1 wregno=10 regval=0
+[68]  PC=0x228 Inst=0x593 Op=12 wr_reg=1 wregno=11 regval=0
+[72]  PC=0x22c Inst=0x613 Op=12 wr_reg=1 wregno=12 regval=0
+[76]  PC=0x230 Inst=0x693 Op=12 wr_reg=1 wregno=13 regval=0
+[80]  PC=0x234 Inst=0x713 Op=12 wr_reg=1 wregno=14 regval=0
+[84]  PC=0x238 Inst=0x793 Op=12 wr_reg=1 wregno=15 regval=0
+[88]  PC=0x23c Inst=0x813 Op=12 wr_reg=1 wregno=16 regval=0
+[92]  PC=0x240 Inst=0x893 Op=12 wr_reg=1 wregno=17 regval=0
+[96]  PC=0x244 Inst=0x913 Op=12 wr_reg=1 wregno=18 regval=0
+[100]  PC=0x248 Inst=0x993 Op=12 wr_reg=1 wregno=19 regval=0
+[104]  PC=0x24c Inst=0xa13 Op=12 wr_reg=1 wregno=20 regval=0
+[108]  PC=0x250 Inst=0xa93 Op=12 wr_reg=1 wregno=21 regval=0
+[112]  PC=0x254 Inst=0xb13 Op=12 wr_reg=1 wregno=22 regval=0
+[116]  PC=0x258 Inst=0xb93 Op=12 wr_reg=1 wregno=23 regval=0
+[120]  PC=0x25c Inst=0xc13 Op=12 wr_reg=1 wregno=24 regval=0
+[124]  PC=0x260 Inst=0xc93 Op=12 wr_reg=1 wregno=25 regval=0
+[128]  PC=0x264 Inst=0xd13 Op=12 wr_reg=1 wregno=26 regval=0
+[132]  PC=0x268 Inst=0xd93 Op=12 wr_reg=1 wregno=27 regval=0
+[136]  PC=0x26c Inst=0xe13 Op=12 wr_reg=1 wregno=28 regval=0
+[140]  PC=0x270 Inst=0xe93 Op=12 wr_reg=1 wregno=29 regval=0
+[144]  PC=0x274 Inst=0xf13 Op=12 wr_reg=1 wregno=30 regval=0
+[148]  PC=0x278 Inst=0xf93 Op=12 wr_reg=1 wregno=31 regval=0
+[152]  PC=0x27c Inst=0x300093 Op=12 wr_reg=1 wregno=1 regval=3
+[156]  PC=0x280 Inst=0x700113 Op=12 wr_reg=1 wregno=2 regval=7
+[172]  PC=0x284 Inst=0x208733 Op=1 wr_reg=1 wregno=14 regval=10
+[176]  PC=0x288 Inst=0xa00393 Op=12 wr_reg=1 wregno=7 regval=10
+[180]  PC=0x28c Inst=0x200193 Op=12 wr_reg=1 wregno=3 regval=2
+[192]  PC=0x290 Inst=0x2771a63 Op=29
+[196]  PC=0x294 Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[200]  PC=0x298 Inst=0x1900093 Op=12 wr_reg=1 wregno=1 regval=25
+[204]  PC=0x29c Inst=0x4b00113 Op=12 wr_reg=1 wregno=2 regval=75
+[220]  PC=0x2a0 Inst=0x208733 Op=1 wr_reg=1 wregno=14 regval=100
+[236]  PC=0x2a4 Inst=0x70313 Op=12 wr_reg=1 wregno=6 regval=100
+[240]  PC=0x2a8 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=1
+[244]  PC=0x2ac Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[260]  PC=0x2b0 Inst=0xfe5214e3 Op=29
+[272]  PC=0x298 Inst=0x1900093 Op=12 wr_reg=1 wregno=1 regval=25
+[276]  PC=0x29c Inst=0x4b00113 Op=12 wr_reg=1 wregno=2 regval=75
+[292]  PC=0x2a0 Inst=0x208733 Op=1 wr_reg=1 wregno=14 regval=100
+[308]  PC=0x2a4 Inst=0x70313 Op=12 wr_reg=1 wregno=6 regval=100
+[312]  PC=0x2a8 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=2
+[316]  PC=0x2ac Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[332]  PC=0x2b0 Inst=0xfe5214e3 Op=29
+[336]  PC=0x2b4 Inst=0x6400393 Op=12 wr_reg=1 wregno=7 regval=100
+[340]  PC=0x2b8 Inst=0x300193 Op=12 wr_reg=1 wregno=3 regval=3
+[352]  PC=0x2bc Inst=0x731463 Op=29
+[356]  PC=0x2c0 Inst=0x301e63 Op=29
+[368]  PC=0x2dc Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[372]  PC=0x2e0 Inst=0x13 Op=12
+[376]  PC=0x2e4 Inst=0x13 Op=12
+[380]  PC=0x2e8 Inst=0x13 Op=12
+[384]  PC=0x2ec Inst=0x13 Op=12
+[388]  PC=0x2f0 Inst=0x13 Op=12
+[392]  PC=0x2f4 Inst=0x13 Op=12
+-- stopped at PC=0x2f8 (end of program) --
+Total instructions=63, cycles=191, IPC=0.329843
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/addi.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/addi.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/addi.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[32]  PC=0x204 Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[36]  PC=0x208 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[40]  PC=0x20c Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[44]  PC=0x210 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[48]  PC=0x214 Inst=0x313 Op=12 wr_reg=1 wregno=6 regval=0
+[52]  PC=0x218 Inst=0x393 Op=12 wr_reg=1 wregno=7 regval=0
+[56]  PC=0x21c Inst=0x413 Op=12 wr_reg=1 wregno=8 regval=0
+[60]  PC=0x220 Inst=0x493 Op=12 wr_reg=1 wregno=9 regval=0
+[64]  PC=0x224 Inst=0x513 Op=12 wr_reg=1 wregno=10 regval=0
+[68]  PC=0x228 Inst=0x593 Op=12 wr_reg=1 wregno=11 regval=0
+[72]  PC=0x22c Inst=0x613 Op=12 wr_reg=1 wregno=12 regval=0
+[76]  PC=0x230 Inst=0x693 Op=12 wr_reg=1 wregno=13 regval=0
+[80]  PC=0x234 Inst=0x713 Op=12 wr_reg=1 wregno=14 regval=0
+[84]  PC=0x238 Inst=0x793 Op=12 wr_reg=1 wregno=15 regval=0
+[88]  PC=0x23c Inst=0x813 Op=12 wr_reg=1 wregno=16 regval=0
+[92]  PC=0x240 Inst=0x893 Op=12 wr_reg=1 wregno=17 regval=0
+[96]  PC=0x244 Inst=0x913 Op=12 wr_reg=1 wregno=18 regval=0
+[100]  PC=0x248 Inst=0x993 Op=12 wr_reg=1 wregno=19 regval=0
+[104]  PC=0x24c Inst=0xa13 Op=12 wr_reg=1 wregno=20 regval=0
+[108]  PC=0x250 Inst=0xa93 Op=12 wr_reg=1 wregno=21 regval=0
+[112]  PC=0x254 Inst=0xb13 Op=12 wr_reg=1 wregno=22 regval=0
+[116]  PC=0x258 Inst=0xb93 Op=12 wr_reg=1 wregno=23 regval=0
+[120]  PC=0x25c Inst=0xc13 Op=12 wr_reg=1 wregno=24 regval=0
+[124]  PC=0x260 Inst=0xc93 Op=12 wr_reg=1 wregno=25 regval=0
+[128]  PC=0x264 Inst=0xd13 Op=12 wr_reg=1 wregno=26 regval=0
+[132]  PC=0x268 Inst=0xd93 Op=12 wr_reg=1 wregno=27 regval=0
+[136]  PC=0x26c Inst=0xe13 Op=12 wr_reg=1 wregno=28 regval=0
+[140]  PC=0x270 Inst=0xe93 Op=12 wr_reg=1 wregno=29 regval=0
+[144]  PC=0x274 Inst=0xf13 Op=12 wr_reg=1 wregno=30 regval=0
+[148]  PC=0x278 Inst=0xf93 Op=12 wr_reg=1 wregno=31 regval=0
+[152]  PC=0x27c Inst=0x300093 Op=12 wr_reg=1 wregno=1 regval=3
+[168]  PC=0x280 Inst=0x708713 Op=12 wr_reg=1 wregno=14 regval=10
+[172]  PC=0x284 Inst=0xa00393 Op=12 wr_reg=1 wregno=7 regval=10
+[176]  PC=0x288 Inst=0x200193 Op=12 wr_reg=1 wregno=3 regval=2
+[188]  PC=0x28c Inst=0xa771a63 Op=29
+[192]  PC=0x290 Inst=0x800000b7 Op=21 wr_reg=1 wregno=1 regval=-2147483648
+[208]  PC=0x294 Inst=0xfff08093 Op=12 wr_reg=1 wregno=1 regval=2147483647
+[224]  PC=0x298 Inst=0x7ff08713 Op=12 wr_reg=1 wregno=14 regval=-2147481602
+[228]  PC=0x29c Inst=0x800003b7 Op=21 wr_reg=1 wregno=7 regval=-2147483648
+[244]  PC=0x2a0 Inst=0x7fe38393 Op=12 wr_reg=1 wregno=7 regval=-2147481602
+[248]  PC=0x2a4 Inst=0x300193 Op=12 wr_reg=1 wregno=3 regval=3
+[260]  PC=0x2a8 Inst=0x8771c63 Op=29
+[264]  PC=0x2ac Inst=0x800000b7 Op=21 wr_reg=1 wregno=1 regval=-2147483648
+[280]  PC=0x2b0 Inst=0xfff08093 Op=12 wr_reg=1 wregno=1 regval=2147483647
+[296]  PC=0x2b4 Inst=0x108713 Op=12 wr_reg=1 wregno=14 regval=-2147483648
+[300]  PC=0x2b8 Inst=0x800003b7 Op=21 wr_reg=1 wregno=7 regval=-2147483648
+[304]  PC=0x2bc Inst=0x400193 Op=12 wr_reg=1 wregno=3 regval=4
+[316]  PC=0x2c0 Inst=0x8771063 Op=29
+[320]  PC=0x2c4 Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[324]  PC=0x2c8 Inst=0xd00093 Op=12 wr_reg=1 wregno=1 regval=13
+[340]  PC=0x2cc Inst=0x908713 Op=12 wr_reg=1 wregno=14 regval=22
+[344]  PC=0x2d0 Inst=0x13 Op=12
+[348]  PC=0x2d4 Inst=0x13 Op=12
+[356]  PC=0x2d8 Inst=0x70313 Op=12 wr_reg=1 wregno=6 regval=22
+[360]  PC=0x2dc Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=1
+[364]  PC=0x2e0 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[380]  PC=0x2e4 Inst=0xfe5212e3 Op=29
+[392]  PC=0x2c8 Inst=0xd00093 Op=12 wr_reg=1 wregno=1 regval=13
+[408]  PC=0x2cc Inst=0x908713 Op=12 wr_reg=1 wregno=14 regval=22
+[412]  PC=0x2d0 Inst=0x13 Op=12
+[416]  PC=0x2d4 Inst=0x13 Op=12
+[424]  PC=0x2d8 Inst=0x70313 Op=12 wr_reg=1 wregno=6 regval=22
+[428]  PC=0x2dc Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=2
+[432]  PC=0x2e0 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[448]  PC=0x2e4 Inst=0xfe5212e3 Op=29
+[452]  PC=0x2e8 Inst=0x1600393 Op=12 wr_reg=1 wregno=7 regval=22
+[456]  PC=0x2ec Inst=0x500193 Op=12 wr_reg=1 wregno=3 regval=5
+[468]  PC=0x2f0 Inst=0x4731863 Op=29
+[472]  PC=0x2f4 Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[476]  PC=0x2f8 Inst=0xd00093 Op=12 wr_reg=1 wregno=1 regval=13
+[492]  PC=0x2fc Inst=0xb08713 Op=12 wr_reg=1 wregno=14 regval=24
+[496]  PC=0x300 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=1
+[500]  PC=0x304 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[516]  PC=0x308 Inst=0xfe5218e3 Op=29
+[528]  PC=0x2f8 Inst=0xd00093 Op=12 wr_reg=1 wregno=1 regval=13
+[544]  PC=0x2fc Inst=0xb08713 Op=12 wr_reg=1 wregno=14 regval=24
+[548]  PC=0x300 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=2
+[552]  PC=0x304 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[568]  PC=0x308 Inst=0xfe5218e3 Op=29
+[572]  PC=0x30c Inst=0x1800393 Op=12 wr_reg=1 wregno=7 regval=24
+[576]  PC=0x310 Inst=0x600193 Op=12 wr_reg=1 wregno=3 regval=6
+[588]  PC=0x314 Inst=0x2771663 Op=29
+[592]  PC=0x318 Inst=0x2000093 Op=12 wr_reg=1 wregno=1 regval=32
+[596]  PC=0x31c Inst=0x2000393 Op=12 wr_reg=1 wregno=7 regval=32
+[600]  PC=0x320 Inst=0x700193 Op=12 wr_reg=1 wregno=3 regval=7
+[612]  PC=0x324 Inst=0x709e63 Op=29
+[616]  PC=0x328 Inst=0x2100093 Op=12 wr_reg=1 wregno=1 regval=33
+[632]  PC=0x32c Inst=0x3208013 Op=12
+[636]  PC=0x330 Inst=0x393 Op=12 wr_reg=1 wregno=7 regval=0
+[640]  PC=0x334 Inst=0x800193 Op=12 wr_reg=1 wregno=3 regval=8
+[652]  PC=0x338 Inst=0x701463 Op=29
+[656]  PC=0x33c Inst=0x301e63 Op=29
+[668]  PC=0x358 Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[672]  PC=0x35c Inst=0x13 Op=12
+[676]  PC=0x360 Inst=0x13 Op=12
+[680]  PC=0x364 Inst=0x13 Op=12
+[684]  PC=0x368 Inst=0x13 Op=12
+[688]  PC=0x36c Inst=0x13 Op=12
+[692]  PC=0x370 Inst=0x13 Op=12
+-- stopped at PC=0x374 (end of program) --
+Total instructions=100, cycles=341, IPC=0.293255
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/auipc.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/auipc.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/auipc.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[32]  PC=0x204 Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[36]  PC=0x208 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[40]  PC=0x20c Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[44]  PC=0x210 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[48]  PC=0x214 Inst=0x313 Op=12 wr_reg=1 wregno=6 regval=0
+[52]  PC=0x218 Inst=0x393 Op=12 wr_reg=1 wregno=7 regval=0
+[56]  PC=0x21c Inst=0x413 Op=12 wr_reg=1 wregno=8 regval=0
+[60]  PC=0x220 Inst=0x493 Op=12 wr_reg=1 wregno=9 regval=0
+[64]  PC=0x224 Inst=0x513 Op=12 wr_reg=1 wregno=10 regval=0
+[68]  PC=0x228 Inst=0x593 Op=12 wr_reg=1 wregno=11 regval=0
+[72]  PC=0x22c Inst=0x613 Op=12 wr_reg=1 wregno=12 regval=0
+[76]  PC=0x230 Inst=0x693 Op=12 wr_reg=1 wregno=13 regval=0
+[80]  PC=0x234 Inst=0x713 Op=12 wr_reg=1 wregno=14 regval=0
+[84]  PC=0x238 Inst=0x793 Op=12 wr_reg=1 wregno=15 regval=0
+[88]  PC=0x23c Inst=0x813 Op=12 wr_reg=1 wregno=16 regval=0
+[92]  PC=0x240 Inst=0x893 Op=12 wr_reg=1 wregno=17 regval=0
+[96]  PC=0x244 Inst=0x913 Op=12 wr_reg=1 wregno=18 regval=0
+[100]  PC=0x248 Inst=0x993 Op=12 wr_reg=1 wregno=19 regval=0
+[104]  PC=0x24c Inst=0xa13 Op=12 wr_reg=1 wregno=20 regval=0
+[108]  PC=0x250 Inst=0xa93 Op=12 wr_reg=1 wregno=21 regval=0
+[112]  PC=0x254 Inst=0xb13 Op=12 wr_reg=1 wregno=22 regval=0
+[116]  PC=0x258 Inst=0xb93 Op=12 wr_reg=1 wregno=23 regval=0
+[120]  PC=0x25c Inst=0xc13 Op=12 wr_reg=1 wregno=24 regval=0
+[124]  PC=0x260 Inst=0xc93 Op=12 wr_reg=1 wregno=25 regval=0
+[128]  PC=0x264 Inst=0xd13 Op=12 wr_reg=1 wregno=26 regval=0
+[132]  PC=0x268 Inst=0xd93 Op=12 wr_reg=1 wregno=27 regval=0
+[136]  PC=0x26c Inst=0xe13 Op=12 wr_reg=1 wregno=28 regval=0
+[140]  PC=0x270 Inst=0xe93 Op=12 wr_reg=1 wregno=29 regval=0
+[144]  PC=0x274 Inst=0xf13 Op=12 wr_reg=1 wregno=30 regval=0
+[148]  PC=0x278 Inst=0xf93 Op=12 wr_reg=1 wregno=31 regval=0
+[152]  PC=0x27c Inst=0x13 Op=12
+[156]  PC=0x280 Inst=0x2517 Op=22 wr_reg=1 wregno=10 regval=640
+[172]  PC=0x284 Inst=0x71c50513 Op=12 wr_reg=1 wregno=10 regval=2460
+[176]  PC=0x288 Inst=0x4005ef Op=25 wr_reg=1 wregno=11 regval=652
+[192]  PC=0x28c Inst=0x40b50533 Op=2 wr_reg=1 wregno=10 regval=1808
+[196]  PC=0x290 Inst=0x23b7 Op=21 wr_reg=1 wregno=7 regval=0
+[212]  PC=0x294 Inst=0x71038393 Op=12 wr_reg=1 wregno=7 regval=1808
+[216]  PC=0x298 Inst=0x200193 Op=12 wr_reg=1 wregno=3 regval=2
+[228]  PC=0x29c Inst=0x2751463 Op=29
+[232]  PC=0x2a0 Inst=0xffffe517 Op=22 wr_reg=1 wregno=10 regval=-1047904
+[248]  PC=0x2a4 Inst=0x8fc50513 Op=12 wr_reg=1 wregno=10 regval=-1049700
+[252]  PC=0x2a8 Inst=0x4005ef Op=25 wr_reg=1 wregno=11 regval=684
+[268]  PC=0x2ac Inst=0x40b50533 Op=2 wr_reg=1 wregno=10 regval=-1050384
+[272]  PC=0x2b0 Inst=0xffffe3b7 Op=21 wr_reg=1 wregno=7 regval=-1048576
+[288]  PC=0x2b4 Inst=0x8f038393 Op=12 wr_reg=1 wregno=7 regval=-1050384
+[292]  PC=0x2b8 Inst=0x300193 Op=12 wr_reg=1 wregno=3 regval=3
+[304]  PC=0x2bc Inst=0x751463 Op=29
+[308]  PC=0x2c0 Inst=0x301e63 Op=29
+[320]  PC=0x2dc Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[324]  PC=0x2e0 Inst=0x13 Op=12
+[328]  PC=0x2e4 Inst=0x13 Op=12
+[332]  PC=0x2e8 Inst=0x13 Op=12
+[336]  PC=0x2ec Inst=0x13 Op=12
+[340]  PC=0x2f0 Inst=0x13 Op=12
+[344]  PC=0x2f4 Inst=0x13 Op=12
+-- stopped at PC=0x2f8 (end of program) --
+Total instructions=56, cycles=167, IPC=0.335329
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/beq.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/beq.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/beq.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[32]  PC=0x204 Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[36]  PC=0x208 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[40]  PC=0x20c Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[44]  PC=0x210 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[48]  PC=0x214 Inst=0x313 Op=12 wr_reg=1 wregno=6 regval=0
+[52]  PC=0x218 Inst=0x393 Op=12 wr_reg=1 wregno=7 regval=0
+[56]  PC=0x21c Inst=0x413 Op=12 wr_reg=1 wregno=8 regval=0
+[60]  PC=0x220 Inst=0x493 Op=12 wr_reg=1 wregno=9 regval=0
+[64]  PC=0x224 Inst=0x513 Op=12 wr_reg=1 wregno=10 regval=0
+[68]  PC=0x228 Inst=0x593 Op=12 wr_reg=1 wregno=11 regval=0
+[72]  PC=0x22c Inst=0x613 Op=12 wr_reg=1 wregno=12 regval=0
+[76]  PC=0x230 Inst=0x693 Op=12 wr_reg=1 wregno=13 regval=0
+[80]  PC=0x234 Inst=0x713 Op=12 wr_reg=1 wregno=14 regval=0
+[84]  PC=0x238 Inst=0x793 Op=12 wr_reg=1 wregno=15 regval=0
+[88]  PC=0x23c Inst=0x813 Op=12 wr_reg=1 wregno=16 regval=0
+[92]  PC=0x240 Inst=0x893 Op=12 wr_reg=1 wregno=17 regval=0
+[96]  PC=0x244 Inst=0x913 Op=12 wr_reg=1 wregno=18 regval=0
+[100]  PC=0x248 Inst=0x993 Op=12 wr_reg=1 wregno=19 regval=0
+[104]  PC=0x24c Inst=0xa13 Op=12 wr_reg=1 wregno=20 regval=0
+[108]  PC=0x250 Inst=0xa93 Op=12 wr_reg=1 wregno=21 regval=0
+[112]  PC=0x254 Inst=0xb13 Op=12 wr_reg=1 wregno=22 regval=0
+[116]  PC=0x258 Inst=0xb93 Op=12 wr_reg=1 wregno=23 regval=0
+[120]  PC=0x25c Inst=0xc13 Op=12 wr_reg=1 wregno=24 regval=0
+[124]  PC=0x260 Inst=0xc93 Op=12 wr_reg=1 wregno=25 regval=0
+[128]  PC=0x264 Inst=0xd13 Op=12 wr_reg=1 wregno=26 regval=0
+[132]  PC=0x268 Inst=0xd93 Op=12 wr_reg=1 wregno=27 regval=0
+[136]  PC=0x26c Inst=0xe13 Op=12 wr_reg=1 wregno=28 regval=0
+[140]  PC=0x270 Inst=0xe93 Op=12 wr_reg=1 wregno=29 regval=0
+[144]  PC=0x274 Inst=0xf13 Op=12 wr_reg=1 wregno=30 regval=0
+[148]  PC=0x278 Inst=0xf93 Op=12 wr_reg=1 wregno=31 regval=0
+[152]  PC=0x27c Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[156]  PC=0x280 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[160]  PC=0x284 Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[176]  PC=0x288 Inst=0x208663 Op=28
+[188]  PC=0x294 Inst=0xfe208ee3 Op=28
+[200]  PC=0x290 Inst=0x301663 Op=29
+[212]  PC=0x29c Inst=0x200193 Op=12 wr_reg=1 wregno=3 regval=2
+[216]  PC=0x2a0 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[220]  PC=0x2a4 Inst=0x100113 Op=12 wr_reg=1 wregno=2 regval=1
+[236]  PC=0x2a8 Inst=0x208463 Op=28
+[240]  PC=0x2ac Inst=0x301463 Op=29
+[252]  PC=0x2b4 Inst=0xfe208ee3 Op=28
+[256]  PC=0x2b8 Inst=0x300193 Op=12 wr_reg=1 wregno=3 regval=3
+[260]  PC=0x2bc Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[264]  PC=0x2c0 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[268]  PC=0x2c4 Inst=0xfff00113 Op=12 wr_reg=1 wregno=2 regval=-1
+[284]  PC=0x2c8 Inst=0x4208063 Op=28
+[288]  PC=0x2cc Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=1
+[292]  PC=0x2d0 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[308]  PC=0x2d4 Inst=0xfe5216e3 Op=29
+[320]  PC=0x2c0 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[324]  PC=0x2c4 Inst=0xfff00113 Op=12 wr_reg=1 wregno=2 regval=-1
+[340]  PC=0x2c8 Inst=0x4208063 Op=28
+[344]  PC=0x2cc Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=2
+[348]  PC=0x2d0 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[364]  PC=0x2d4 Inst=0xfe5216e3 Op=29
+[368]  PC=0x2d8 Inst=0x100093 Op=12 wr_reg=1 wregno=1 regval=1
+[372]  PC=0x2dc Inst=0xa63 Op=28
+[384]  PC=0x2f0 Inst=0x108093 Op=12 wr_reg=1 wregno=1 regval=2
+[400]  PC=0x2f4 Inst=0x108093 Op=12 wr_reg=1 wregno=1 regval=3
+[404]  PC=0x2f8 Inst=0x300393 Op=12 wr_reg=1 wregno=7 regval=3
+[408]  PC=0x2fc Inst=0x400193 Op=12 wr_reg=1 wregno=3 regval=4
+[420]  PC=0x300 Inst=0x709463 Op=29
+[424]  PC=0x304 Inst=0x301e63 Op=29
+[436]  PC=0x320 Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[440]  PC=0x324 Inst=0x13 Op=12
+[444]  PC=0x328 Inst=0x13 Op=12
+[448]  PC=0x32c Inst=0x13 Op=12
+[452]  PC=0x330 Inst=0x13 Op=12
+[456]  PC=0x334 Inst=0x13 Op=12
+[460]  PC=0x338 Inst=0x13 Op=12
+-- stopped at PC=0x33c (end of program) --
+Total instructions=72, cycles=225, IPC=0.32
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/bge.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/bge.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/bge.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[32]  PC=0x204 Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[36]  PC=0x208 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[40]  PC=0x20c Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[44]  PC=0x210 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[48]  PC=0x214 Inst=0x313 Op=12 wr_reg=1 wregno=6 regval=0
+[52]  PC=0x218 Inst=0x393 Op=12 wr_reg=1 wregno=7 regval=0
+[56]  PC=0x21c Inst=0x413 Op=12 wr_reg=1 wregno=8 regval=0
+[60]  PC=0x220 Inst=0x493 Op=12 wr_reg=1 wregno=9 regval=0
+[64]  PC=0x224 Inst=0x513 Op=12 wr_reg=1 wregno=10 regval=0
+[68]  PC=0x228 Inst=0x593 Op=12 wr_reg=1 wregno=11 regval=0
+[72]  PC=0x22c Inst=0x613 Op=12 wr_reg=1 wregno=12 regval=0
+[76]  PC=0x230 Inst=0x693 Op=12 wr_reg=1 wregno=13 regval=0
+[80]  PC=0x234 Inst=0x713 Op=12 wr_reg=1 wregno=14 regval=0
+[84]  PC=0x238 Inst=0x793 Op=12 wr_reg=1 wregno=15 regval=0
+[88]  PC=0x23c Inst=0x813 Op=12 wr_reg=1 wregno=16 regval=0
+[92]  PC=0x240 Inst=0x893 Op=12 wr_reg=1 wregno=17 regval=0
+[96]  PC=0x244 Inst=0x913 Op=12 wr_reg=1 wregno=18 regval=0
+[100]  PC=0x248 Inst=0x993 Op=12 wr_reg=1 wregno=19 regval=0
+[104]  PC=0x24c Inst=0xa13 Op=12 wr_reg=1 wregno=20 regval=0
+[108]  PC=0x250 Inst=0xa93 Op=12 wr_reg=1 wregno=21 regval=0
+[112]  PC=0x254 Inst=0xb13 Op=12 wr_reg=1 wregno=22 regval=0
+[116]  PC=0x258 Inst=0xb93 Op=12 wr_reg=1 wregno=23 regval=0
+[120]  PC=0x25c Inst=0xc13 Op=12 wr_reg=1 wregno=24 regval=0
+[124]  PC=0x260 Inst=0xc93 Op=12 wr_reg=1 wregno=25 regval=0
+[128]  PC=0x264 Inst=0xd13 Op=12 wr_reg=1 wregno=26 regval=0
+[132]  PC=0x268 Inst=0xd93 Op=12 wr_reg=1 wregno=27 regval=0
+[136]  PC=0x26c Inst=0xe13 Op=12 wr_reg=1 wregno=28 regval=0
+[140]  PC=0x270 Inst=0xe93 Op=12 wr_reg=1 wregno=29 regval=0
+[144]  PC=0x274 Inst=0xf13 Op=12 wr_reg=1 wregno=30 regval=0
+[148]  PC=0x278 Inst=0xf93 Op=12 wr_reg=1 wregno=31 regval=0
+[152]  PC=0x27c Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[156]  PC=0x280 Inst=0xfff00093 Op=12 wr_reg=1 wregno=1 regval=-1
+[160]  PC=0x284 Inst=0xfff00113 Op=12 wr_reg=1 wregno=2 regval=-1
+[176]  PC=0x288 Inst=0x20d663 Op=31
+[188]  PC=0x294 Inst=0xfe20dee3 Op=31
+[200]  PC=0x290 Inst=0x301663 Op=29
+[212]  PC=0x29c Inst=0x200193 Op=12 wr_reg=1 wregno=3 regval=2
+[216]  PC=0x2a0 Inst=0xffe00093 Op=12 wr_reg=1 wregno=1 regval=-2
+[220]  PC=0x2a4 Inst=0x100113 Op=12 wr_reg=1 wregno=2 regval=1
+[236]  PC=0x2a8 Inst=0x20d463 Op=31
+[240]  PC=0x2ac Inst=0x301463 Op=29
+[252]  PC=0x2b4 Inst=0xfe20dee3 Op=31
+[256]  PC=0x2b8 Inst=0x300193 Op=12 wr_reg=1 wregno=3 regval=3
+[260]  PC=0x2bc Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[264]  PC=0x2c0 Inst=0xfff00093 Op=12 wr_reg=1 wregno=1 regval=-1
+[268]  PC=0x2c4 Inst=0x13 Op=12
+[272]  PC=0x2c8 Inst=0x13 Op=12
+[276]  PC=0x2cc Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[292]  PC=0x2d0 Inst=0x420d063 Op=31
+[296]  PC=0x2d4 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=1
+[300]  PC=0x2d8 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[316]  PC=0x2dc Inst=0xfe5212e3 Op=29
+[328]  PC=0x2c0 Inst=0xfff00093 Op=12 wr_reg=1 wregno=1 regval=-1
+[332]  PC=0x2c4 Inst=0x13 Op=12
+[336]  PC=0x2c8 Inst=0x13 Op=12
+[340]  PC=0x2cc Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[356]  PC=0x2d0 Inst=0x420d063 Op=31
+[360]  PC=0x2d4 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=2
+[364]  PC=0x2d8 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[380]  PC=0x2dc Inst=0xfe5212e3 Op=29
+[384]  PC=0x2e0 Inst=0x100093 Op=12 wr_reg=1 wregno=1 regval=1
+[400]  PC=0x2e4 Inst=0xda63 Op=31
+[412]  PC=0x2f8 Inst=0x108093 Op=12 wr_reg=1 wregno=1 regval=2
+[428]  PC=0x2fc Inst=0x108093 Op=12 wr_reg=1 wregno=1 regval=3
+[432]  PC=0x300 Inst=0x300393 Op=12 wr_reg=1 wregno=7 regval=3
+[436]  PC=0x304 Inst=0x400193 Op=12 wr_reg=1 wregno=3 regval=4
+[448]  PC=0x308 Inst=0x709463 Op=29
+[452]  PC=0x30c Inst=0x301e63 Op=29
+[464]  PC=0x328 Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[468]  PC=0x32c Inst=0x13 Op=12
+[472]  PC=0x330 Inst=0x13 Op=12
+[476]  PC=0x334 Inst=0x13 Op=12
+[480]  PC=0x338 Inst=0x13 Op=12
+[484]  PC=0x33c Inst=0x13 Op=12
+[488]  PC=0x340 Inst=0x13 Op=12
+-- stopped at PC=0x344 (end of program) --
+Total instructions=76, cycles=239, IPC=0.317992
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/jal.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/jal.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/jal.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[32]  PC=0x204 Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[36]  PC=0x208 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[40]  PC=0x20c Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[44]  PC=0x210 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[48]  PC=0x214 Inst=0x313 Op=12 wr_reg=1 wregno=6 regval=0
+[52]  PC=0x218 Inst=0x393 Op=12 wr_reg=1 wregno=7 regval=0
+[56]  PC=0x21c Inst=0x413 Op=12 wr_reg=1 wregno=8 regval=0
+[60]  PC=0x220 Inst=0x493 Op=12 wr_reg=1 wregno=9 regval=0
+[64]  PC=0x224 Inst=0x513 Op=12 wr_reg=1 wregno=10 regval=0
+[68]  PC=0x228 Inst=0x593 Op=12 wr_reg=1 wregno=11 regval=0
+[72]  PC=0x22c Inst=0x613 Op=12 wr_reg=1 wregno=12 regval=0
+[76]  PC=0x230 Inst=0x693 Op=12 wr_reg=1 wregno=13 regval=0
+[80]  PC=0x234 Inst=0x713 Op=12 wr_reg=1 wregno=14 regval=0
+[84]  PC=0x238 Inst=0x793 Op=12 wr_reg=1 wregno=15 regval=0
+[88]  PC=0x23c Inst=0x813 Op=12 wr_reg=1 wregno=16 regval=0
+[92]  PC=0x240 Inst=0x893 Op=12 wr_reg=1 wregno=17 regval=0
+[96]  PC=0x244 Inst=0x913 Op=12 wr_reg=1 wregno=18 regval=0
+[100]  PC=0x248 Inst=0x993 Op=12 wr_reg=1 wregno=19 regval=0
+[104]  PC=0x24c Inst=0xa13 Op=12 wr_reg=1 wregno=20 regval=0
+[108]  PC=0x250 Inst=0xa93 Op=12 wr_reg=1 wregno=21 regval=0
+[112]  PC=0x254 Inst=0xb13 Op=12 wr_reg=1 wregno=22 regval=0
+[116]  PC=0x258 Inst=0xb93 Op=12 wr_reg=1 wregno=23 regval=0
+[120]  PC=0x25c Inst=0xc13 Op=12 wr_reg=1 wregno=24 regval=0
+[124]  PC=0x260 Inst=0xc93 Op=12 wr_reg=1 wregno=25 regval=0
+[128]  PC=0x264 Inst=0xd13 Op=12 wr_reg=1 wregno=26 regval=0
+[132]  PC=0x268 Inst=0xd93 Op=12 wr_reg=1 wregno=27 regval=0
+[136]  PC=0x26c Inst=0xe13 Op=12 wr_reg=1 wregno=28 regval=0
+[140]  PC=0x270 Inst=0xe93 Op=12 wr_reg=1 wregno=29 regval=0
+[144]  PC=0x274 Inst=0xf13 Op=12 wr_reg=1 wregno=30 regval=0
+[148]  PC=0x278 Inst=0xf93 Op=12 wr_reg=1 wregno=31 regval=0
+[152]  PC=0x27c Inst=0x200193 Op=12 wr_reg=1 wregno=3 regval=2
+[156]  PC=0x280 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[160]  PC=0x284 Inst=0x100026f Op=25 wr_reg=1 wregno=4 regval=648
+[172]  PC=0x294 Inst=0x117 Op=22 wr_reg=1 wregno=2 regval=660
+[188]  PC=0x298 Inst=0xff410113 Op=12 wr_reg=1 wregno=2 regval=648
+[204]  PC=0x29c Inst=0x2410063 Op=28
+[216]  PC=0x2bc Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[220]  PC=0x2c0 Inst=0x13 Op=12
+[224]  PC=0x2c4 Inst=0x13 Op=12
+[228]  PC=0x2c8 Inst=0x13 Op=12
+[232]  PC=0x2cc Inst=0x13 Op=12
+[236]  PC=0x2d0 Inst=0x13 Op=12
+[240]  PC=0x2d4 Inst=0x13 Op=12
+-- stopped at PC=0x2d8 (end of program) --
+Total instructions=44, cycles=115, IPC=0.382609
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/jalr.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/jalr.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/jalr.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x93 Op=12 wr_reg=1 wregno=1 regval=0
+[32]  PC=0x204 Inst=0x113 Op=12 wr_reg=1 wregno=2 regval=0
+[36]  PC=0x208 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[40]  PC=0x20c Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[44]  PC=0x210 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[48]  PC=0x214 Inst=0x313 Op=12 wr_reg=1 wregno=6 regval=0
+[52]  PC=0x218 Inst=0x393 Op=12 wr_reg=1 wregno=7 regval=0
+[56]  PC=0x21c Inst=0x413 Op=12 wr_reg=1 wregno=8 regval=0
+[60]  PC=0x220 Inst=0x493 Op=12 wr_reg=1 wregno=9 regval=0
+[64]  PC=0x224 Inst=0x513 Op=12 wr_reg=1 wregno=10 regval=0
+[68]  PC=0x228 Inst=0x593 Op=12 wr_reg=1 wregno=11 regval=0
+[72]  PC=0x22c Inst=0x613 Op=12 wr_reg=1 wregno=12 regval=0
+[76]  PC=0x230 Inst=0x693 Op=12 wr_reg=1 wregno=13 regval=0
+[80]  PC=0x234 Inst=0x713 Op=12 wr_reg=1 wregno=14 regval=0
+[84]  PC=0x238 Inst=0x793 Op=12 wr_reg=1 wregno=15 regval=0
+[88]  PC=0x23c Inst=0x813 Op=12 wr_reg=1 wregno=16 regval=0
+[92]  PC=0x240 Inst=0x893 Op=12 wr_reg=1 wregno=17 regval=0
+[96]  PC=0x244 Inst=0x913 Op=12 wr_reg=1 wregno=18 regval=0
+[100]  PC=0x248 Inst=0x993 Op=12 wr_reg=1 wregno=19 regval=0
+[104]  PC=0x24c Inst=0xa13 Op=12 wr_reg=1 wregno=20 regval=0
+[108]  PC=0x250 Inst=0xa93 Op=12 wr_reg=1 wregno=21 regval=0
+[112]  PC=0x254 Inst=0xb13 Op=12 wr_reg=1 wregno=22 regval=0
+[116]  PC=0x258 Inst=0xb93 Op=12 wr_reg=1 wregno=23 regval=0
+[120]  PC=0x25c Inst=0xc13 Op=12 wr_reg=1 wregno=24 regval=0
+[124]  PC=0x260 Inst=0xc93 Op=12 wr_reg=1 wregno=25 regval=0
+[128]  PC=0x264 Inst=0xd13 Op=12 wr_reg=1 wregno=26 regval=0
+[132]  PC=0x268 Inst=0xd93 Op=12 wr_reg=1 wregno=27 regval=0
+[136]  PC=0x26c Inst=0xe13 Op=12 wr_reg=1 wregno=28 regval=0
+[140]  PC=0x270 Inst=0xe93 Op=12 wr_reg=1 wregno=29 regval=0
+[144]  PC=0x274 Inst=0xf13 Op=12 wr_reg=1 wregno=30 regval=0
+[148]  PC=0x278 Inst=0xf93 Op=12 wr_reg=1 wregno=31 regval=0
+[152]  PC=0x27c Inst=0x200193 Op=12 wr_reg=1 wregno=3 regval=2
+[156]  PC=0x280 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[160]  PC=0x284 Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=644
+[176]  PC=0x288 Inst=0x1030313 Op=12 wr_reg=1 wregno=6 regval=660
+[192]  PC=0x28c Inst=0x302e7 Op=27 wr_reg=1 wregno=5 regval=656
+[204]  PC=0x294 Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=660
+[220]  PC=0x298 Inst=0xffc30313 Op=12 wr_reg=1 wregno=6 regval=656
+[236]  PC=0x29c Inst=0xc629a63 Op=29
+[240]  PC=0x2a0 Inst=0x300193 Op=12 wr_reg=1 wregno=3 regval=3
+[244]  PC=0x2a4 Inst=0x297 Op=22 wr_reg=1 wregno=5 regval=676
+[260]  PC=0x2a8 Inst=0x1028293 Op=12 wr_reg=1 wregno=5 regval=692
+[276]  PC=0x2ac Inst=0x282e7 Op=27 wr_reg=1 wregno=5 regval=688
+[288]  PC=0x2b4 Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=692
+[304]  PC=0x2b8 Inst=0xffc30313 Op=12 wr_reg=1 wregno=6 regval=688
+[320]  PC=0x2bc Inst=0xa629a63 Op=29
+[324]  PC=0x2c0 Inst=0x400193 Op=12 wr_reg=1 wregno=3 regval=4
+[328]  PC=0x2c4 Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[332]  PC=0x2c8 Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=712
+[348]  PC=0x2cc Inst=0x1030313 Op=12 wr_reg=1 wregno=6 regval=728
+[364]  PC=0x2d0 Inst=0x306e7 Op=27 wr_reg=1 wregno=13 regval=724
+[376]  PC=0x2d8 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=1
+[380]  PC=0x2dc Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[396]  PC=0x2e0 Inst=0xfe5214e3 Op=29
+[408]  PC=0x2c8 Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=712
+[424]  PC=0x2cc Inst=0x1030313 Op=12 wr_reg=1 wregno=6 regval=728
+[440]  PC=0x2d0 Inst=0x306e7 Op=27 wr_reg=1 wregno=13 regval=724
+[452]  PC=0x2d8 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=2
+[456]  PC=0x2dc Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[472]  PC=0x2e0 Inst=0xfe5214e3 Op=29
+[476]  PC=0x2e4 Inst=0x500193 Op=12 wr_reg=1 wregno=3 regval=5
+[480]  PC=0x2e8 Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[484]  PC=0x2ec Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=748
+[500]  PC=0x2f0 Inst=0x1430313 Op=12 wr_reg=1 wregno=6 regval=768
+[504]  PC=0x2f4 Inst=0x13 Op=12
+[516]  PC=0x2f8 Inst=0x306e7 Op=27 wr_reg=1 wregno=13 regval=764
+[528]  PC=0x300 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=1
+[532]  PC=0x304 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[548]  PC=0x308 Inst=0xfe5212e3 Op=29
+[560]  PC=0x2ec Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=748
+[576]  PC=0x2f0 Inst=0x1430313 Op=12 wr_reg=1 wregno=6 regval=768
+[580]  PC=0x2f4 Inst=0x13 Op=12
+[592]  PC=0x2f8 Inst=0x306e7 Op=27 wr_reg=1 wregno=13 regval=764
+[604]  PC=0x300 Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=2
+[608]  PC=0x304 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[624]  PC=0x308 Inst=0xfe5212e3 Op=29
+[628]  PC=0x30c Inst=0x600193 Op=12 wr_reg=1 wregno=3 regval=6
+[632]  PC=0x310 Inst=0x213 Op=12 wr_reg=1 wregno=4 regval=0
+[636]  PC=0x314 Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=788
+[652]  PC=0x318 Inst=0x1830313 Op=12 wr_reg=1 wregno=6 regval=812
+[656]  PC=0x31c Inst=0x13 Op=12
+[660]  PC=0x320 Inst=0x13 Op=12
+[668]  PC=0x324 Inst=0x306e7 Op=27 wr_reg=1 wregno=13 regval=808
+[680]  PC=0x32c Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=1
+[684]  PC=0x330 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[700]  PC=0x334 Inst=0xfe5210e3 Op=29
+[712]  PC=0x314 Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=788
+[728]  PC=0x318 Inst=0x1830313 Op=12 wr_reg=1 wregno=6 regval=812
+[732]  PC=0x31c Inst=0x13 Op=12
+[736]  PC=0x320 Inst=0x13 Op=12
+[744]  PC=0x324 Inst=0x306e7 Op=27 wr_reg=1 wregno=13 regval=808
+[756]  PC=0x32c Inst=0x120213 Op=12 wr_reg=1 wregno=4 regval=2
+[760]  PC=0x330 Inst=0x200293 Op=12 wr_reg=1 wregno=5 regval=2
+[776]  PC=0x334 Inst=0xfe5210e3 Op=29
+[780]  PC=0x338 Inst=0x100293 Op=12 wr_reg=1 wregno=5 regval=1
+[784]  PC=0x33c Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=828
+[800]  PC=0x340 Inst=0x1c30313 Op=12 wr_reg=1 wregno=6 regval=856
+[816]  PC=0x344 Inst=0xffc30067 Op=27
+[828]  PC=0x354 Inst=0x128293 Op=12 wr_reg=1 wregno=5 regval=2
+[844]  PC=0x358 Inst=0x128293 Op=12 wr_reg=1 wregno=5 regval=3
+[860]  PC=0x35c Inst=0x128293 Op=12 wr_reg=1 wregno=5 regval=4
+[864]  PC=0x360 Inst=0x400393 Op=12 wr_reg=1 wregno=7 regval=4
+[868]  PC=0x364 Inst=0x700193 Op=12 wr_reg=1 wregno=3 regval=7
+[880]  PC=0x368 Inst=0x729463 Op=29
+[884]  PC=0x36c Inst=0x301e63 Op=29
+[896]  PC=0x388 Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[900]  PC=0x38c Inst=0x13 Op=12
+[904]  PC=0x390 Inst=0x13 Op=12
+[908]  PC=0x394 Inst=0x13 Op=12
+[912]  PC=0x398 Inst=0x13 Op=12
+[916]  PC=0x39c Inst=0x13 Op=12
+[920]  PC=0x3a0 Inst=0x13 Op=12
+-- stopped at PC=0x3a4 (end of program) --
+Total instructions=112, cycles=455, IPC=0.246154
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test10.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test10.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test10.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[32]  PC=0x204 Inst=0x21000293 Op=12 wr_reg=1 wregno=5 regval=528
+[48]  PC=0x208 Inst=0x8280e7 Op=27 wr_reg=1 wregno=1 regval=524
+[60]  PC=0x218 Inst=0x20c00313 Op=12 wr_reg=1 wregno=6 regval=524
+[76]  PC=0x21c Inst=0x609663 Op=29
+[80]  PC=0x220 Inst=0x118193 Op=12 wr_reg=1 wregno=3 regval=1
+-- stopped at PC=0x224 (end of program) --
+Total instructions=6, cycles=35, IPC=0.171429
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test11.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test11.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test11.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x200193 Op=12 wr_reg=1 wregno=3 regval=2
+[32]  PC=0x204 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[36]  PC=0x208 Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=520
+[52]  PC=0x20c Inst=0x1030313 Op=12 wr_reg=1 wregno=6 regval=536
+[68]  PC=0x210 Inst=0x302e7 Op=27 wr_reg=1 wregno=5 regval=532
+[80]  PC=0x218 Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[84]  PC=0x21c Inst=0x80006f Op=25
+[96]  PC=0x224 Inst=0x13 Op=12
+-- stopped at PC=0x228 (end of program) --
+Total instructions=8, cycles=43, IPC=0.186047
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test12.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test12.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test12.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x200193 Op=12 wr_reg=1 wregno=3 regval=2
+[32]  PC=0x204 Inst=0x293 Op=12 wr_reg=1 wregno=5 regval=0
+[36]  PC=0x208 Inst=0x317 Op=22 wr_reg=1 wregno=6 regval=520
+[52]  PC=0x20c Inst=0x1c30313 Op=12 wr_reg=1 wregno=6 regval=548
+[68]  PC=0x210 Inst=0xffc30067 Op=27
+[80]  PC=0x220 Inst=0x128293 Op=12 wr_reg=1 wregno=5 regval=1
+[96]  PC=0x224 Inst=0x128293 Op=12 wr_reg=1 wregno=5 regval=2
+[112]  PC=0x228 Inst=0x128293 Op=12 wr_reg=1 wregno=5 regval=3
+[116]  PC=0x22c Inst=0x400393 Op=12 wr_reg=1 wregno=7 regval=4
+[120]  PC=0x230 Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[132]  PC=0x234 Inst=0x729a63 Op=29
+[144]  PC=0x248 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[148]  PC=0x24c Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[152]  PC=0x250 Inst=0x13 Op=12
+-- stopped at PC=0x254 (end of program) --
+Total instructions=14, cycles=71, IPC=0.197183
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test13.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test13.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test13.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
+[32]  PC=0x204 Inst=0xffe00093 Op=12 wr_reg=1 wregno=1 regval=-2
+[36]  PC=0x208 Inst=0x100113 Op=12 wr_reg=1 wregno=2 regval=1
+[52]  PC=0x20c Inst=0x115463 Op=31
+-- stopped at PC=0x214 (end of program) --
+Total instructions=4, cycles=21, IPC=0.190476
+Passed!
+-- DONE --------------------
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test9.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test9.mem
+verilator '+define+IDMEMINITFILE="/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test9.mem"' --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v -CFLAGS '-DVCD_OUTPUT -DDPRINTF'
+-- COMPILE -----------------
+make -j 4 -C obj_dir -f Vpipeline.mk
+make[1]: Entering directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -Os -c -o sim_main.o ../sim_main.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_dpi.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_dpi.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_vcd_c.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_vcd_c.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o verilated_threads.o /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vpipeline.cpp Vpipeline___024root__DepSet_ha2aed019__0.cpp Vpipeline___024root__DepSet_h0e89545c__0.cpp Vpipeline_pipeline__DepSet_h4d7d4d0b__0.cpp Vpipeline_WB_STAGE__DepSet_h58b40e1e__0.cpp Vpipeline__Dpi.cpp Vpipeline__Trace__0.cpp Vpipeline__ConstPool_0.cpp Vpipeline___024root__Slow.cpp Vpipeline___024root__DepSet_ha2aed019__0__Slow.cpp Vpipeline___024root__DepSet_h0e89545c__0__Slow.cpp Vpipeline_pipeline__Slow.cpp Vpipeline_pipeline__DepSet_ha3d9c74e__0__Slow.cpp Vpipeline_WB_STAGE__Slow.cpp Vpipeline_WB_STAGE__DepSet_h79cc6917__0__Slow.cpp Vpipeline__Syms.cpp Vpipeline__Trace__0__Slow.cpp > Vpipeline__ALL.cpp
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++ -Os  -I.  -MMD -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include -I/storage/ice-shared/cs3220/design_tool_chain/verilator_v5.014-25-ge8e791287/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -DVCD_OUTPUT -DDPRINTF   -c -o Vpipeline__ALL.o Vpipeline__ALL.cpp
+echo "" > Vpipeline__ALL.verilator_deplist.tmp
+Archive ar -rcs Vpipeline__ALL.a Vpipeline__ALL.o
+/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/gcc-11.3.1/gcc-12.3.0-ukkkutsxfl5kpnnaxflpkq2jtliwthfz/bin/g++     sim_main.o verilated.o verilated_dpi.o verilated_vcd_c.o verilated_threads.o Vpipeline__ALL.a    -pthread -lpthread -latomic   -o Vpipeline
+rm Vpipeline__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
+-- RUN ---------------------
+obj_dir/Vpipeline
+[28]  PC=0x200 Inst=0x193 Op=12 wr_reg=1 wregno=3 regval=0
+[32]  PC=0x204 Inst=0x14000ef Op=25 wr_reg=1 wregno=1 regval=520
+[44]  PC=0x218 Inst=0x20800293 Op=12 wr_reg=1 wregno=5 regval=520
+[60]  PC=0x21c Inst=0x509663 Op=29
+[64]  PC=0x220 Inst=0x118193 Op=12 wr_reg=1 wregno=3 regval=1
+-- stopped at PC=0x224 (end of program) --
+Total instructions=5, cycles=27, IPC=0.185185
+Passed!
+-- DONE --------------------

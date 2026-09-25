@@ -22,7 +22,7 @@
   // simulator from.  `run_tests.sh` overrides this from the command line
   // (verilator +define+IDMEMINITFILE=...), so it never rewrites this file.
 `ifndef IDMEMINITFILE
-  `define IDMEMINITFILE "test/inclass_1/test1.mem"
+  `define IDMEMINITFILE "test/takehome/test9.mem"
 `endif
   `define IMEMADDRBITS  16
   `define IMEMWORDBITS  2

@@ -29,6 +29,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vpipeline_pipeline final : public VerilatedMo
     CData/*0:0*/ __PVT__my_DE_stage__DOT__wr_reg_DE;
     CData/*0:0*/ __PVT__my_DE_stage__DOT__use_rs1_DE;
     CData/*0:0*/ __PVT__my_DE_stage__DOT__use_rs2_DE;
+    CData/*0:0*/ __PVT__my_AGEX_stage__DOT__br_cond_AGEX;
     CData/*0:0*/ __PVT__my_MEM_stage__DOT__wr_mem_MEM;
     IData/*31:0*/ __PVT__cycle_count;
     VlWide<5>/*128:0*/ __PVT__my_FE_stage__DOT__FE_latch;
@@ -36,10 +37,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vpipeline_pipeline final : public VerilatedMo
     IData/*31:0*/ __PVT__my_FE_stage__DOT__inst_count_FE;
     IData/*31:0*/ __PVT__my_FE_stage__DOT__inst_count_AGEX;
     IData/*31:0*/ __PVT__my_FE_stage__DOT__pcplus_FE;
-    IData/*31:0*/ __PVT__my_FE_stage__DOT__br_target_AGEX;
     VlWide<8>/*237:0*/ __PVT__my_DE_stage__DOT__DE_latch;
     IData/*31:0*/ __PVT__my_DE_stage__DOT__in_use_regs;
     VlWide<5>/*140:0*/ __PVT__my_AGEX_stage__DOT__AGEX_latch;
+    IData/*31:0*/ __PVT__my_AGEX_stage__DOT__br_target_AGEX;
+    IData/*31:0*/ my_AGEX_stage__DOT____VdfgExtracted_h4e54d416__0;
+    IData/*31:0*/ my_AGEX_stage__DOT____VdfgExtracted_h7fcc4370__0;
     VlWide<5>/*140:0*/ __PVT__my_MEM_stage__DOT__MEM_latch;
     IData/*31:0*/ __PVT__my_MEM_stage__DOT__memaddr_MEM;
     IData/*31:0*/ __PVT__my_MEM_stage__DOT__wr_val_MEM;

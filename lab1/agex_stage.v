@@ -109,6 +109,15 @@ module AGEX_STAGE(
   //   infers a latch.  Task 7 adds more arms.
   //
   // ===========================================================================
+
+  // ===== Task 7: more ALU arms, and the jump targets =============
+  //
+  //   TODO (a): add these arms to the Task 2 ALU case:
+  //               `SUB_I  `LUI_I  `AUIPC_I  `JAL_I  `JALR_I
+  //             `JAL_I and `JALR_I write the return address into rd.
+  //
+  // ===========================================================================
+
   reg [`DBITS-1:0] aluout_AGEX;
 
   always @ (*) begin
@@ -118,9 +127,13 @@ module AGEX_STAGE(
        end
        `ADD_I: aluout_AGEX = regval1_AGEX + regval2_AGEX;
        `ADDI_I: aluout_AGEX =  regval1_AGEX + sxt_imm_AGEX;
+       `SUB_I: aluout_AGEX = regval1_AGEX - regval2_AGEX;
+       `LUI_I: aluout_AGEX = sxt_imm_AGEX;
+       `AUIPC_I: aluout_AGEX = PC_AGEX + sxt_imm_AGEX;
+       `JAL_I: aluout_AGEX = pcplus_AGEX;
+       `JALR_I: aluout_AGEX = pcplus_AGEX;
      endcase
   end
-
 
   // ===== Task 3: pack the AGEX latch ============================
   //
@@ -179,6 +192,8 @@ module AGEX_STAGE(
       `BGE_I : br_cond_AGEX = $signed(regval1_AGEX) >= $signed(regval2_AGEX);
       `BLTU_I: br_cond_AGEX = regval1_AGEX < regval2_AGEX;
       `BGEU_I : br_cond_AGEX = regval1_AGEX >= regval2_AGEX;
+      `JAL_I : br_cond_AGEX = 1'b1;
+      `JALR_I : br_cond_AGEX = 1'b1;
       default : br_cond_AGEX = 1'b0;
     endcase
   end
@@ -199,11 +214,24 @@ module AGEX_STAGE(
   //
   // ===========================================================================
 
+  // ===== Task 7: more ALU arms, and the jump targets =============
+  //
+  //   TODO (b): extend the Task 5 target block so jal and jalr redirect too.
+  //             jal adds its immediate to PC_AGEX.  jalr adds its immediate
+  //             to a register value, then clears bit 0 of the result.
+  //             Neither one has a condition to evaluate.
+  //
+  // ===========================================================================
+
   always @(*)begin
 
     // Branch is taken
     if (is_br_AGEX && br_cond_AGEX) begin
       br_target_AGEX = PC_AGEX + sxt_imm_AGEX;
+
+      if (op_I_AGEX == `JALR_I) begin
+        br_target_AGEX = (regval1_AGEX + sxt_imm_AGEX) & 32'hFFFE;
+      end
     end
 
     // Not a branch or the branch isn't taken
@@ -225,20 +253,6 @@ module AGEX_STAGE(
   assign from_AGEX_to_DE = {
     br_mispred_AGEX
   };
-
-
-  // ===== Task 7: more ALU arms, and the jump targets =============
-  //
-  //   TODO (a): add these arms to the Task 2 ALU case:
-  //               `SUB_I  `LUI_I  `AUIPC_I  `JAL_I  `JALR_I
-  //             `JAL_I and `JALR_I write the return address into rd.
-  //
-  //   TODO (b): extend the Task 5 target block so jal and jalr redirect too.
-  //             jal adds its immediate to PC_AGEX.  jalr adds its immediate
-  //             to a register value, then clears bit 0 of the result.
-  //             Neither one has a condition to evaluate.
-  //
-  // ===========================================================================
 
   // ===== Task 8 (bonus): the rest of the instruction set =====================
   //

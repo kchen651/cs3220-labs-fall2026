@@ -1,0 +1,24 @@
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/add.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/addi.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/auipc.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/beq.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/bge.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/jal.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/jalr.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test10.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test11.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test12.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test13.mem
+Passed!
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/takehome/test9.mem
+Passed!

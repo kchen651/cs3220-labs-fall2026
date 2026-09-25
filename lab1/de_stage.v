@@ -206,19 +206,20 @@ end
 
    reg  [`DBITS-1:0] sxt_imm_DE;
 always @(*) begin 
-  case (type_immediate_DE )  
+  case (type_immediate_DE)  
   `I_immediate: sxt_imm_DE = {{21{inst_DE[31]}}, inst_DE[30:25], inst_DE[24:21], inst_DE[20]}; // Why not just inst_DE[30:25]?
-   `B_immediate: sxt_imm_DE = {{20{inst_DE[31]}}, inst_DE[7], inst_DE[30:25], inst_DE[11:8], 1'b0};
+  `B_immediate: sxt_imm_DE = {{20{inst_DE[31]}}, inst_DE[7], inst_DE[30:25], inst_DE[11:8], 1'b0};
 
    // instr[31:25] = imm[11:5]
    // instr[11:7] = imm[4:0]
-  `S_immediate: 
-     sxt_imm_DE =  {{20{inst_DE[31]}}, inst_DE[31:25], inst_DE[11:7]}
-   `U_immediate: 
-     sxt_imm_DE = {inst_DE{31:20}, 20'b0}
+  `S_immediate: sxt_imm_DE =  {{20{inst_DE[31]}}, inst_DE[31:25], inst_DE[11:7]};
+  `U_immediate: sxt_imm_DE = {inst_DE[31:20], 20'b0};
 
     /*
       instr[31:12] = imm[20|10:1|11|19:12]
+
+      31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+      20 10 09 08 07 06 05 04 03 02 01 11 19 18 17 16 15 14 13 12
 
       instr[31] = imm[31:21]
       instr[31] = imm[20]
@@ -227,7 +228,7 @@ always @(*) begin
       instr[30:21] = imm[10:1]
     */
    `J_immediate: 
-    sxt_imm_DE = {{12{inst_DE[31]}, inst_DE[19:12], instr_DE[20], instr_DE[30:21],  1'b0}
+    sxt_imm_DE = {{11{inst_DE[31]}}, inst_DE[31], inst_DE[19:12], inst_DE[20], inst_DE[30:21],  1'b0};
    default:
     sxt_imm_DE = 32'b0; 
   endcase  
