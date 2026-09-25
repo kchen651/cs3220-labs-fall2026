@@ -207,7 +207,8 @@
   `define PHT_BITS 8
   `define counter_WIDTH 1
 
-  `define PHT_WIDTH 1
+  //`define PHT_WIDTH 1
+  //`define PHT_WIDTH 2
 
   `define BTB_WIDTH 1
   `define BTB_BITS 1

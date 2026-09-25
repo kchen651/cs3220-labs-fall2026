@@ -1,0 +1,48 @@
+$date
+	Fri Sep  4 23:57:33 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 32 ! calc_result [31:0] $end
+$var reg 32 " a [31:0] $end
+$var reg 32 # b [31:0] $end
+$var reg 4 $ instruction [3:0] $end
+$scope module alu1 $end
+$var wire 1 % i_clk $end
+$var wire 32 & i_data_a [31:0] $end
+$var wire 32 ' i_data_b [31:0] $end
+$var wire 4 ( i_inst [3:0] $end
+$var wire 1 ) i_rst_n $end
+$var wire 1 * i_valid $end
+$var wire 32 + o_data [31:0] $end
+$var wire 1 , o_overflow $end
+$var wire 1 - o_valid $end
+$var reg 1 . overflow $end
+$var reg 32 / result [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 /
+x.
+z-
+z,
+b1 +
+1*
+0)
+b101 (
+b1 '
+b0 &
+1%
+b101 $
+b1 #
+b0 "
+b1 !
+$end
+#10

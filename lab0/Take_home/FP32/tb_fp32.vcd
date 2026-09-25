@@ -1,0 +1,49 @@
+$date
+	Fri Sep 11 03:14:51 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_fp32 $end
+$var wire 1 ! test_valid $end
+$var wire 32 " test_data [31:0] $end
+$var reg 32 # test_a [31:0] $end
+$var reg 32 $ test_b [31:0] $end
+$var reg 1 % test_clk $end
+$var reg 2 & test_i_inst [1:0] $end
+$var reg 1 ' test_i_valid $end
+$var reg 1 ( test_rst_n $end
+$scope module dut $end
+$var wire 1 % i_clk $end
+$var wire 32 ) i_data_a [31:0] $end
+$var wire 32 * i_data_b [31:0] $end
+$var wire 2 + i_inst [1:0] $end
+$var wire 1 ( i_rst_n $end
+$var wire 1 ' i_valid $end
+$var wire 32 , o_data [31:0] $end
+$var wire 1 ! o_valid $end
+$var reg 32 - data_fp32 [31:0] $end
+$var reg 1 . valid_fp32 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x.
+bx -
+bx ,
+bx +
+bx *
+bx )
+x(
+x'
+bx &
+x%
+bx $
+bx #
+bx "
+x!
+$end

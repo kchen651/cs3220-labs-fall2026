@@ -123,15 +123,32 @@ module FE_STAGE(
 
 endmodule
 
+// wr_data is corrected to 1 bit wide in class
+  //input wire [`DBITS-1:0] wr_data,
+
 // Task 1: Branch history pattern logic
 module BHR (
   input wire clk,
   input wire reset,
   input wire wr_ena,
-  input wire [`DBITS-1:0] wr_data,
+  input wire wr_data,
   output wire [`BHR_WIDTH-1:0] out
 );
-//TODO: Complete the BHR logic
+  //TODO: Complete the BHR logic
+  reg [`BHR_WIDTH-1:0] history = {`BHR_WIDTH{0}};
+
+  always @(posedge clk) begin
+
+    if (reset) begin
+      history <= {`BHR_WIDTH{0}};
+    end
+
+    if (wr_ena) begin
+      history <= wr_ena ? history << 1 + wr_data : history;
+    end
+  end
+
+  assign out = history;
 endmodule
 
 // Task 2: Prediction History table register pattern
@@ -146,7 +163,11 @@ module PHT (
   input wire wr_ena
 );
 //TODO: Complete the PHT logic
+
+
 endmodule
+
+
 // Task 4: Branch Target Buffer
 //Hint: what is the signal need for BHT update?
 
