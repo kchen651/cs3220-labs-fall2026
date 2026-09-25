@@ -19,6 +19,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vpipeline_pipeline final : public VerilatedMo
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(reset,0,0);
+    CData/*0:0*/ __PVT__from_DE_to_FE;
+    CData/*0:0*/ __PVT__from_AGEX_to_DE;
     CData/*2:0*/ my_DE_stage__DOT____Vxrand_h9c26cae2__0;
     CData/*3:0*/ my_DE_stage__DOT____Vxrand_h9c270190__0;
     CData/*5:0*/ __PVT__my_DE_stage__DOT__op_I_DE;
@@ -27,10 +29,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vpipeline_pipeline final : public VerilatedMo
     CData/*0:0*/ __PVT__my_DE_stage__DOT__wr_reg_DE;
     CData/*0:0*/ __PVT__my_DE_stage__DOT__use_rs1_DE;
     CData/*0:0*/ __PVT__my_DE_stage__DOT__use_rs2_DE;
-    CData/*0:0*/ __PVT__my_DE_stage__DOT__has_data_hazards;
-    CData/*0:0*/ __PVT__my_AGEX_stage__DOT__is_br_AGEX;
-    CData/*0:0*/ __PVT__my_AGEX_stage__DOT__wr_reg_AGEX;
-    CData/*4:0*/ __PVT__my_AGEX_stage__DOT__wregno_AGEX;
     CData/*0:0*/ __PVT__my_MEM_stage__DOT__wr_mem_MEM;
     IData/*31:0*/ __PVT__cycle_count;
     VlWide<5>/*128:0*/ __PVT__my_FE_stage__DOT__FE_latch;
@@ -38,12 +36,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vpipeline_pipeline final : public VerilatedMo
     IData/*31:0*/ __PVT__my_FE_stage__DOT__inst_count_FE;
     IData/*31:0*/ __PVT__my_FE_stage__DOT__inst_count_AGEX;
     IData/*31:0*/ __PVT__my_FE_stage__DOT__pcplus_FE;
+    IData/*31:0*/ __PVT__my_FE_stage__DOT__br_target_AGEX;
     VlWide<8>/*237:0*/ __PVT__my_DE_stage__DOT__DE_latch;
     IData/*31:0*/ __PVT__my_DE_stage__DOT__in_use_regs;
     VlWide<5>/*140:0*/ __PVT__my_AGEX_stage__DOT__AGEX_latch;
-    IData/*31:0*/ __PVT__my_AGEX_stage__DOT__regval1_AGEX;
-    IData/*31:0*/ __PVT__my_AGEX_stage__DOT__regval2_AGEX;
-    IData/*31:0*/ __PVT__my_AGEX_stage__DOT__sxt_imm_AGEX;
     VlWide<5>/*140:0*/ __PVT__my_MEM_stage__DOT__MEM_latch;
     IData/*31:0*/ __PVT__my_MEM_stage__DOT__memaddr_MEM;
     IData/*31:0*/ __PVT__my_MEM_stage__DOT__wr_val_MEM;

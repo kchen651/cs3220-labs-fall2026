@@ -20,10 +20,10 @@ rm Vpipeline__ALL.verilator_deplist.tmp
 make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
 -- RUN ---------------------
 obj_dir/Vpipeline
-[28]  PC=0x200 Inst=0x100193 Op=12
+[28]  PC=0x200 Inst=0x100193 Op=12 wr_reg=1 wregno=3 regval=1
 -- stopped at PC=0x204 (end of program) --
 Total instructions=1, cycles=9, IPC=0.111111
-Failed. exitcode: 0
+Passed!
 -- DONE --------------------
 
 TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/inclass_1/test2.mem
@@ -47,9 +47,12 @@ rm Vpipeline__ALL.verilator_deplist.tmp
 make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
 -- RUN ---------------------
 obj_dir/Vpipeline
-[28]  PC=0x200 Inst=0x100093 Op=12
-Total instructions=1, cycles=9, IPC=0.111111
-Failed. exitcode: 0
+[28]  PC=0x200 Inst=0x100093 Op=12 wr_reg=1 wregno=1 regval=1
+[44]  PC=0x204 Inst=0x108093 Op=12 wr_reg=1 wregno=1 regval=2
+[60]  PC=0x208 Inst=0xfff08193 Op=12 wr_reg=1 wregno=3 regval=1
+-- stopped at PC=0x20c (end of program) --
+Total instructions=3, cycles=25, IPC=0.12
+Passed!
 -- DONE --------------------
 
 TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/test/inclass_1/test3.mem
@@ -73,8 +76,11 @@ rm Vpipeline__ALL.verilator_deplist.tmp
 make[1]: Leaving directory '/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab1/obj_dir'
 -- RUN ---------------------
 obj_dir/Vpipeline
-[28]  PC=0x200 Inst=0x100093 Op=12
-[32]  PC=0x204 Inst=0xfff00113 Op=12
-Total instructions=2, cycles=11, IPC=0.181818
-Failed. exitcode: 0
+[28]  PC=0x200 Inst=0x100093 Op=12 wr_reg=1 wregno=1 regval=1
+[32]  PC=0x204 Inst=0xfff00113 Op=12 wr_reg=1 wregno=2 regval=-1
+[44]  PC=0x208 Inst=0x108093 Op=12 wr_reg=1 wregno=1 regval=2
+[60]  PC=0x20c Inst=0x2081b3 Op=1 wr_reg=1 wregno=3 regval=1
+-- stopped at PC=0x210 (end of program) --
+Total instructions=4, cycles=25, IPC=0.16
+Passed!
 -- DONE --------------------

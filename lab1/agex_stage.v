@@ -44,8 +44,8 @@ module AGEX_STAGE(
   wire[`AGEX_latch_WIDTH-1:0] AGEX_latch_contents;
 
   wire valid_AGEX;
-  wire [`INSTBITS-1:0]inst_AGEX;
-  wire [`DBITS-1:0]PC_AGEX;
+  wire [`INSTBITS-1:0] inst_AGEX;
+  wire [`DBITS-1:0] PC_AGEX;
   wire [`DBITS-1:0] inst_count_AGEX;
   wire [`DBITS-1:0] pcplus_AGEX;
   wire [`IOPBITS-1:0] op_I_AGEX;
@@ -74,7 +74,7 @@ module AGEX_STAGE(
   //   comment.  All six are already declared for you a few lines up.
   //
   // ===========================================================================
-  wire [`DE_latch_WIDTH - (1 + `INSTBITS + `DBITS + `DBITS + `IOPBITS + `DBITS) - 1 : 0] de_latch_rest;
+  // wire [`DE_latch_WIDTH - (1 + `INSTBITS + `DBITS + `DBITS + `IOPBITS + `DBITS) - 1 : 0] de_latch_rest;
 
   assign  {
             valid_AGEX,
@@ -83,7 +83,20 @@ module AGEX_STAGE(
             pcplus_AGEX,
             op_I_AGEX,
             inst_count_AGEX,
-            de_latch_rest        // <-- Task 1: replace with the six remaining fields
+            regval1_AGEX,
+            regval2_AGEX,
+            sxt_imm_AGEX,
+            is_br_AGEX,
+            wr_reg_AGEX,
+            wregno_AGEX
+            /*
+            rs1_val_DE,
+            rs2_val_DE,    
+            sxt_imm_DE,
+            is_br_DE,
+            wr_reg_DE,
+            rd_DE        // <-- Task 1: replace with the six remaining fields
+            */
             } = from_DE_latch;
 
 
@@ -96,12 +109,16 @@ module AGEX_STAGE(
   //   infers a latch.  Task 7 adds more arms.
   //
   // ===========================================================================
+  reg [`DBITS-1:0] aluout_AGEX;
+
   always @ (*) begin
-    // case (op_I_AGEX)
-    //   default: begin
-    //     aluout_AGEX  = '0;
-    //   end
-    // endcase
+    case (op_I_AGEX)
+       default: begin
+         aluout_AGEX  = '0;
+       end
+       `ADD_I: aluout_AGEX = regval1_AGEX + regval2_AGEX;
+       `ADDI_I: aluout_AGEX =  regval1_AGEX + sxt_imm_AGEX;
+     endcase
   end
 
 
@@ -122,9 +139,12 @@ module AGEX_STAGE(
                                 PC_AGEX,
                                 op_I_AGEX,
                                 inst_count_AGEX,
+                                aluout_AGEX,
+                                wr_reg_AGEX,
+                                wregno_AGEX
                                 // <-- Task 3: replace this padding with the
                                 //     three fields mem_stage.v unpacks next
-                                {(`AGEX_latch_WIDTH - (1 + `INSTBITS + `DBITS + `IOPBITS + `DBITS)){1'b0}}
+                                //{(`AGEX_latch_WIDTH - (1 + `INSTBITS + `DBITS + `IOPBITS + `DBITS)){1'b0}}
                                  };
 
   always @ (posedge clk ) begin
@@ -153,14 +173,12 @@ module AGEX_STAGE(
   // ===========================================================================
   always @ (*) begin
     case (op_I_AGEX)
-      `BEQ_I : br_cond_AGEX = 1'b1; // write correct code to check the branch condition.
-      /*
-      `BNE_I : ...
-      `BLT_I : ...
-      `BGE_I : ...
-      `BLTU_I: ..
-      `BGEU_I : ...
-      */
+      `BEQ_I : br_cond_AGEX = regval1_AGEX == regval2_AGEX;
+      `BNE_I : br_cond_AGEX = regval1_AGEX != regval2_AGEX;
+      `BLT_I : br_cond_AGEX = $signed(regval1_AGEX) < $signed(regval2_AGEX);
+      `BGE_I : br_cond_AGEX = $signed(regval1_AGEX) >= $signed(regval2_AGEX);
+      `BLTU_I: br_cond_AGEX = regval1_AGEX < regval2_AGEX;
+      `BGEU_I : br_cond_AGEX = regval1_AGEX >= regval2_AGEX;
       default : br_cond_AGEX = 1'b0;
     endcase
   end
@@ -182,19 +200,31 @@ module AGEX_STAGE(
   // ===========================================================================
 
   always @(*)begin
-    br_target_AGEX = '0;              
-    // if (is_br_AGEX && br_cond_AGEX)
-  end
 
+    // Branch is taken
+    if (is_br_AGEX && br_cond_AGEX) begin
+      br_target_AGEX = PC_AGEX + sxt_imm_AGEX;
+    end
+
+    // Not a branch or the branch isn't taken
+    else begin
+      br_target_AGEX = pcplus_AGEX;
+    end
+  end
   
   assign br_mispred_AGEX = (is_br_AGEX
                          && (br_target_AGEX != pcplus_AGEX)) ? 1 : 0; // Given to you.  Do not change this line.
 
   // forward signals to the FE stage
-  assign from_AGEX_to_FE = '0;        
+  assign from_AGEX_to_FE = {
+    br_mispred_AGEX,
+    br_target_AGEX
+  };
 
   // forward signals to the DE stage
-  assign from_AGEX_to_DE = '0;        
+  assign from_AGEX_to_DE = {
+    br_mispred_AGEX
+  };
 
 
   // ===== Task 7: more ALU arms, and the jump targets =============
