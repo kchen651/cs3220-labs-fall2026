@@ -28,7 +28,7 @@
 // address space is m 0x00000000 to 0x000fffff
 // [NOTICE] please note that both imem and dmem use the SAME "IDMEMINITFILE".
 // you need to change this line to change which test file to read 
-`define IDMEMINITFILE "/home/powlectro-unix/CS3220_TA_Labs/revisions/SKELETON_lab3/test/public/takehome/varied_ops.mem"
+`define IDMEMINITFILE "/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/test/public/inclass/handshake_div.mem"
 `define IMEMADDRBITS    16
 `define IMEMWORDBITS    2
 `define IMEMWORDS	    (1 << (`IMEMADDRBITS - `IMEMWORDBITS))

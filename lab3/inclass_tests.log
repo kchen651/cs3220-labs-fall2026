@@ -1,0 +1,24 @@
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/test/public/inclass/alutest0.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/test/public/inclass/alutest0.mem
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/define.vh
+sed -i 's|define IDMEMINITFILE.*|define IDMEMINITFILE "/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/test/public/inclass/alutest0.mem"|g'  /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/define.vh
+verilator --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v divider.v external_alu_wrapper.v FU_stage.v multiplier.v -CFLAGS '-DIDMEMINITFILE=/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/test/public/inclass/alutest0.mem -DVCD_OUTPUT -DDPRINTF'
+%Error: FU_stage.v:24:11: syntax error, unexpected '=', expecting ':'
+   24 |   wire [32=1:0] OP1;
+      |           ^
+%Error: Exiting due to 1 error(s)
+make: *** [Makefile:65: tests] Error 1
+
+TESTING: /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/test/public/inclass/handshake_div.mem
+-- VERILATE ----------------
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/test/public/inclass/handshake_div.mem
+/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/define.vh
+sed -i 's|define IDMEMINITFILE.*|define IDMEMINITFILE "/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/test/public/inclass/handshake_div.mem"|g'  /home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/define.vh
+verilator --exe -cc pipeline.v --top-module pipeline --trace --trace-structs --assert -Wpedantic -Wno-DECLFILENAME -Wno-UNUSED --x-initial unique --x-assign unique sim_main.cpp fe_stage.v de_stage.v mem_stage.v wb_stage.v agex_stage.v divider.v external_alu_wrapper.v FU_stage.v multiplier.v -CFLAGS '-DIDMEMINITFILE=/home/hice1/kchen651/Desktop/CS3220/cs3220-labs-fall2026/lab3/test/public/inclass/handshake_div.mem -DVCD_OUTPUT -DDPRINTF'
+%Error: FU_stage.v:24:11: syntax error, unexpected '=', expecting ':'
+   24 |   wire [32=1:0] OP1;
+      |           ^
+%Error: Exiting due to 1 error(s)
+make: *** [Makefile:65: tests] Error 1
